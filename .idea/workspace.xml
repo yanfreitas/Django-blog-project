@@ -2,34 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Django-blog-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/miniblog/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/miniblog/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/miniblog/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/miniblog/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/miniblog/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/migrations/0002_author_username.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
