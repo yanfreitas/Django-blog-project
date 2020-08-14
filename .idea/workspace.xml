@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/migrations/0002_author_username.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/static/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/miniblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,6 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
   </component>
   <component name="RecentsManager">

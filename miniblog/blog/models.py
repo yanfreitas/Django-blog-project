@@ -50,3 +50,4 @@ class Comments(models.Model):
 
     class Meta:
         ordering = ['date_time']
+

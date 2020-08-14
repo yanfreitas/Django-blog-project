@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Mini-Blog Home</h1>
+    <p>Welcome to Mini-Blog!</p>
+    <p><h2>More Recent posts:</h2></p>
+    {% for post in posts %}
+        <h4>{{ post.author }}</h4>
+        <h5>{{ post.title }}</h5>
+        {{ post.description }}
+        <p>{{ post.date }}</p>
+        <ul><font size="5">Comments:</font></ul>
+        {% for comments in post.comments_set.all %}
+        <ul><strong>Author:</strong>{{ comments.author }}</ul>
+        <ul><strong>Description:</strong>{{ comments.description }}</ul>
+        <ul>{{ comments.date_time }}</ul>
+        <hr>
+        {% endfor %}
+    {% endfor %}
+    </ul>
+{% endblock %}
