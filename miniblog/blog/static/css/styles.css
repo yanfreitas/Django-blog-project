@@ -1,0 +1,17 @@
+.sidebar-nav {
+    margin-top: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.breakline {
+            width: 900px;
+            word-wrap: break-word;
+        }
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 1rem;
+}
+

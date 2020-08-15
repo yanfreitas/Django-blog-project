@@ -7,12 +7,12 @@
     {% for post in posts %}
         <h4>{{ post.author }}</h4>
         <h5>{{ post.title }}</h5>
-        {{ post.description }}
+        <p class="breakline">{{ post.description }}</p>
         <p>{{ post.date }}</p>
         <ul><font size="5">Comments:</font></ul>
         {% for comments in post.comments_set.all %}
         <ul><strong>Author:</strong>{{ comments.author }}</ul>
-        <ul><strong>Description:</strong>{{ comments.description }}</ul>
+        <ul><strong>Description:</strong><p class="breakline">{{ comments.description }}</p></ul>
         <ul>{{ comments.date_time }}</ul>
         <hr>
         {% endfor %}
