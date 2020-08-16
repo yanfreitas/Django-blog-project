@@ -3,5 +3,8 @@ from blog import views
 
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('blogs/', views.BlogListView.as_view(), name='blogs'),
+    path('bloggers/', views.AuthorListView.as_view(), name='bloggers'),
+    path('blogger/<int:id>', views.AuthorDetailView.as_view(), name='author-detail')
 ]

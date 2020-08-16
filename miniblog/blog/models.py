@@ -23,7 +23,7 @@ class Blogpost(models.Model):
         return reverse('blogpost-detail', args=[str(self.id)])
 
     class Meta:
-        ordering = ['date']
+        ordering = ['-date']
 
 
 class Author(models.Model):

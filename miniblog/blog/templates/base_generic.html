@@ -16,8 +16,8 @@
             {% block sidebar %}
                 <ul class="sidebar-nav">
                     <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'index' %}">Home</a></li>
-                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="">All blogs</a></li>
-                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="">All bloggers</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'blogs' %}">All blogs</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'bloggers' %}">All bloggers</a></li>
                 </ul>
             {% endblock %}
             </div>

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <br><ul><h1>All Blog Posts</h1></ul></br>
+    {% if blogpost_list %}
+    <ul>
+        {% for post in blogpost_list %}
+            <a href="{{ blogpost.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
+            <a href="{{ post.author.get_absolute_url }}"><h6>{{ post.author }}</h6></a>
+            <strong>Description:</strong><p class="breakline">{{ post.description }}</p>
+            {{ post.date }}
+            <hr>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>The are no posts yet!</p>
+    {% endif %}
+{% endblock %}

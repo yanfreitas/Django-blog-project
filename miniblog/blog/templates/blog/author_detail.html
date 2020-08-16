@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>{{ author.username }}</h1>
+    <h4>Biography:</h4><p class="breakline">{{ author.bio }}</p>
+    <hr>
+    <h5>Posts:</h5>
+    {% for post in author.blogpost_set.all %}
+        <a href="{{ blog.get_absolute_url }}">{{post.title}}, {{ post.date }}</a>
+        <hr>
+    {% endfor %}
+{% endblock %}

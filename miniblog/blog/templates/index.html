@@ -5,7 +5,7 @@
     <p>Welcome to Mini-Blog!</p>
     <p><h2>More Recent posts:</h2></p>
     {% for post in posts %}
-        <h4>{{ post.author }}</h4>
+        <h4><a href="{{ post.author.get_absolute_url }}">{{ post.author }}</a></h4>
         <h5>{{ post.title }}</h5>
         <p class="breakline">{{ post.description }}</p>
         <p>{{ post.date }}</p>
