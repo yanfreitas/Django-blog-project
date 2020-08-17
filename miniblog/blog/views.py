@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
 from blog.models import Blogpost, Comments, Author
 from django.views import generic
 
@@ -29,3 +29,8 @@ class AuthorDetailView(generic.DetailView):
     slug_field = 'id'
     slug_url_kwarg = 'id'
 
+
+class BlogDetailView(generic.DetailView):
+    model = Blogpost
+    slug_field = 'id'
+    slug_url_kwarg = 'id'

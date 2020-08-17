@@ -9,7 +9,9 @@
         <h5>{{ post.title }}</h5>
         <p class="breakline">{{ post.description }}</p>
         <p>{{ post.date }}</p>
-        <ul><font size="5">Comments:</font></ul>
+        {% if post.comments_set.all %}
+            <ul><font size="5">Comments:</font></ul>
+        {% endif %}
         {% for comments in post.comments_set.all %}
         <ul><strong>Author:</strong>{{ comments.author }}</ul>
         <ul><strong>Description:</strong><p class="breakline">{{ comments.description }}</p></ul>

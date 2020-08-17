@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>{{ blogpost.title }}</h1>
+    <h4>Description:</h4><p class="breakline">{{ blogpost.description }}</p>
+    <a href="{{ blogpost.author.get_absolute_url }}">{{ blogpost.author }}</a> - {{ blogpost.date }}
+    <hr>
+    {% if blogpost.comments_set.all %}
+        <h4>Comments:</h4>
+    {% endif %}
+    {% for comments in blogpost.comments_set.all %}
+        <ul><strong>Author:</strong><a href="{{ comments.author.get_absolute_url }}">{{ comments.author }}</a></ul>
+        <ul><strong>Description:</strong><p class="breakline">{{ comments.description }}</p></ul>
+        <ul>{{ comments.date_time }}</ul>
+        <hr>
+    {% endfor %}
+{% endblock %}

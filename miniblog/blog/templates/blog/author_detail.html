@@ -6,7 +6,7 @@
     <hr>
     <h5>Posts:</h5>
     {% for post in author.blogpost_set.all %}
-        <a href="{{ blog.get_absolute_url }}">{{post.title}}, {{ post.date }}</a>
+        <a href="{{ post.get_absolute_url }}">{{post.title}}, {{ post.date }}</a>
         <hr>
     {% endfor %}
 {% endblock %}

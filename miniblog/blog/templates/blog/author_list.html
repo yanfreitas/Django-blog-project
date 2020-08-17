@@ -5,7 +5,7 @@
     {% if author_list %}
     <ul>
         {% for blogger in author_list %}
-            <a href="{{ author.get_absolute_url }}"><h4>{{ blogger.username }}</h4></a>
+            <a href="{{ blogger.get_absolute_url }}"><h4>{{ blogger.username }}</h4></a>
             <hr>
         {% endfor %}
     </ul>
