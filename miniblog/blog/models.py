@@ -46,7 +46,7 @@ class Comments(models.Model):
     date_time = models.DateTimeField(auto_now_add=True)
 
     blog_post = models.ForeignKey(Blogpost, on_delete=models.SET_NULL, null=True)
-    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         ordering = ['date_time']

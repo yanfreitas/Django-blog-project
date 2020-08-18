@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/templates/registration/logged_out.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_cpmplete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_email.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/migrations/0004_auto_20200818_1534.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/comments_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/miniblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/miniblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
