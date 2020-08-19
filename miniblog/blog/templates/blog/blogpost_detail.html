@@ -9,9 +9,17 @@
         <h4>Comments:</h4>
     {% endif %}
     {% for comments in blogpost.comments_set.all %}
-        <ul><strong>Author:</strong><a href="{{ comments.author.get_absolute_url }}">{{ comments.author }}</a></ul>
+        <ul><strong>Author:</strong>{{ comments.author }}</ul>
         <ul><strong>Description:</strong><p class="breakline">{{ comments.description }}</p></ul>
         <ul>{{ comments.date_time }}</ul>
         <hr>
     {% endfor %}
+    <h4>Make a comment:</h4>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}
