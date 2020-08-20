@@ -1,5 +1,7 @@
 {% extends "base_generic.html" %}
-
+{% block title %}
+    <title>Author-detail</title>
+{% endblock title %}
 {% block content %}
     <h1>{{ author.username }}</h1>
     <h4>Biography:</h4><p class="breakline">{{ author.bio }}</p>

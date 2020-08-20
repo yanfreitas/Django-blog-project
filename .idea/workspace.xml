@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/static/blog/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/static/blog/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/author_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/blogpost_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +46,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\blog\static\blog\css" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\blog\static\css" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\miniblog" />

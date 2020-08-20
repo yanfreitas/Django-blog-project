@@ -13,4 +13,3 @@ class CreateComments(forms.ModelForm):
         model = Comments
         fields = ['description']
         labels = {'description': ''}
-

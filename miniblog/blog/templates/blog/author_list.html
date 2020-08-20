@@ -1,7 +1,9 @@
 {% extends "base_generic.html" %}
-
+{% block title %}
+    <title>All-bloggers</title>
+{% endblock title %}
 {% block content %}
-    <br><ul><h1>All Bloggers</h1></ul></br>
+    <h1>All Bloggers</h1>
     {% if author_list %}
     <ul>
         {% for blogger in author_list %}
