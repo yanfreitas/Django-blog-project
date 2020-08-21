@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Blogpost, Author, Comments
+from blog.models import Post, Comments
 
 
 class CommentsInline(admin.TabularInline):
@@ -7,16 +7,11 @@ class CommentsInline(admin.TabularInline):
     extra = False
 
 
-@admin.register(Blogpost)
+@admin.register(Post)
 class BlogpostAdmin(admin.ModelAdmin):
     list_display = ('title', 'date', 'author')
     list_filter = ('date',)
     inlines = [CommentsInline]
-
-
-@admin.register(Author)
-class AuthorAdmin(admin.ModelAdmin):
-    pass
 
 
 @admin.register(Comments)
