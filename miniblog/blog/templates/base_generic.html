@@ -23,9 +23,14 @@
             <div class="col-md-2">
             {% block sidebar %}
                 {% if user.is_authenticated %}
-                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link">{{ user.get_username }}</a></li>
+                    <div>
+                        <div class="media">
+                            <img class="rounded-circle home-img" src="{{ user.profile.image.url }}">
+                        </div>
+                    </div>
                 {% endif %}
                 <ul class="sidebar-nav">
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link">{{ user.username }}</a></li>
                     <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'index' %}">Home</a></li>
                     {% if user.is_authenticated %}
                         <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a></li>

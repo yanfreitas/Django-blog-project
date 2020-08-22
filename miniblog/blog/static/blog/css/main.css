@@ -82,3 +82,10 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+.home-img {
+  height: 220px;
+  width: 220px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}

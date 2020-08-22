@@ -2,26 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/miniblog/profile_pics/24899848_1356127361165731_5994790118459723337_n.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/users/templates/users/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/users/templates/users/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/users/templates/users/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/media/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/media/profile_pics/24899848_1356127361165731_5994790118459723337_n_QY42B8r.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/media/profile_pics/photo-1503803548695-c2a7b4a5b875.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/media/profile_pics/photo-1503803548695-c2a7b4a5b875_Er7julT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/media/profile_pics/photo-1503803548695-c2a7b4a5b875_UYTMfRf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/users/migrations/0002_auto_20200822_1439.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/users/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/static/blog/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/static/blog/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/miniblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/media/profile_pics/24899848_1356127361165731_5994790118459723337_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/media/profile_pics/24899848_1356127361165731_5994790118459723337_n.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/miniblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/templates/registration/logged_out.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/templates/registration/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_confirm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_cpmplete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_done.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_email.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/templates/registration/password_reset_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/templates/users/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -55,10 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\media" />
+      <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\media\profile_pics" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\blog\static\blog\css" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\blog\static\css" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog" />
-      <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\miniblog" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
