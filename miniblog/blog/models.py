@@ -19,7 +19,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to acces a detail record for this book"""
-        return reverse('blogpost-detail', args=[str(self.id)])
+        return reverse('post-detail', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-date']

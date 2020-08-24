@@ -34,6 +34,7 @@
                     <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'index' %}">Home</a></li>
                     {% if user.is_authenticated %}
                         <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a></li>
+                        <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a></li>
                         <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
                         <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'login' %}">Login</a></li>
