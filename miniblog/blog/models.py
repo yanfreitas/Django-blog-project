@@ -12,6 +12,10 @@ class Post(models.Model):
     date = models.DateTimeField(default=timezone.now)
 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, related_name='blog_post')
+
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         """String for representing the Model object"""
@@ -35,4 +39,3 @@ class Comments(models.Model):
 
     class Meta:
         ordering = ['date_time']
-

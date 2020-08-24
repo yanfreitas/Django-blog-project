@@ -16,6 +16,13 @@
         </div>
         <h2 class="article-title">{{ object.title }}</h2>
         <p class="article-content">{{ object.description }}</p>
+        <form action="{% url 'like-post' object.pk %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="post_id" value="{{ object.id }}" class="btn btn-primary btn-sm">Like</button> -
+          {{ total_likes }} Likes
+        </form>
+        {{ object.likes.user }}
+        <hr>
         {% if object.comments_set.all %}
           {% for comment in object.comments_set.all %}
             <article class="media content-section">
@@ -38,6 +45,7 @@
         {% endif %}
       </div>
     </article>
+    <h2>Make a comment to this post!</h2>
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">

@@ -5,16 +5,13 @@ from django.views.generic.edit import FormMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse
 from blog.forms import CreateComments
+from django.http import HttpResponseRedirect
 
 
-def index(request):
-    """View function for home page of site"""
-
-    context = {
-        'posts': Post.objects.all(),
-    }
-
-    return render(request, 'index.html', context=context)
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
 
 
 class PostListView(generic.ListView):
@@ -34,6 +31,8 @@ class PostDetailView(FormMixin, generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context['form'] = CreateComments()
+        actual_post = get_object_or_404(Post, id=self.kwargs['pk'])
+        context['total_likes'] = actual_post.total_likes()
         return context
 
     def post(self, request, *args, **kwargs):
