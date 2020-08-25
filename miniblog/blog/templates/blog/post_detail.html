@@ -42,9 +42,8 @@
                   <small class="text-muted">{{ comment.date_time|date:"d F, Y" }}</small>
                 </div>
                 <p class="article-content">{{ comment.description }}</p>
-                {% if comment.author == user %}
+                {% if comment.author == user or object.author == user %}
                   <div>
-                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a>
                     <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'comment-delete' comment.id %}">Delete</a>
                   </div>
                 {% endif %}
@@ -55,7 +54,7 @@
       </div>
     </article>
     {% if user.is_authenticated %}
-        <h2>Make a comment to this post!</h2>
+        <h4>Make a comment to this post!</h4>
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">

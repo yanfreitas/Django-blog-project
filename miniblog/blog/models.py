@@ -31,7 +31,7 @@ class Post(models.Model):
 
 class Comments(models.Model):
     """Model for representing a comment on the post"""
-    description = models.TextField(max_length=300, help_text='Enter a comment to the post')
+    description = models.TextField(max_length=300)
     date_time = models.DateTimeField(default=timezone.now)
 
     blog_post = models.ForeignKey(Post, on_delete=models.CASCADE)

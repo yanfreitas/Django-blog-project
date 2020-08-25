@@ -41,9 +41,10 @@ class PostDetailView(FormMixin, generic.DetailView):
         if actual_post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        context['form'] = CreateComments()
         context['total_likes'] = actual_post.total_likes()
         context['liked'] = liked
+        context['form'] = CreateComments()
+
         return context
 
     def post(self, request, *args, **kwargs):
@@ -103,7 +104,7 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteV
 
     def test_func(self):
         comment = self.get_object()
-        if self.request.user == comment.author:
+        if self.request.user == comment.author or self.request.user == comment.blog_post.author:
             return True
         return False
 
