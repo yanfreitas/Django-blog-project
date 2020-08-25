@@ -18,8 +18,17 @@
         <p class="article-content">{{ object.description }}</p>
         <form action="{% url 'like-post' object.pk %}" method="POST">
           {% csrf_token %}
-          <button type="submit" name="post_id" value="{{ object.id }}" class="btn btn-primary btn-sm">Like</button> -
-          {{ total_likes }} Likes
+        {% if user.is_authenticated %}
+          {% if liked %}
+              <button type="submit" name="post_id" value="{{ object.id }}" class="btn btn-danger btn-sm">Unlike</button>
+
+          {% else %}
+              <button type="submit" name="post_id" value="{{ object.id }}" class="btn btn-primary btn-sm">Like</button>
+          {% endif %}
+        {% else %}
+            <a href="{% url 'login' %}?next={{request.path}}">Login to like or comment this post</a>
+        {% endif %}
+        - {{ total_likes }} Likes
         </form>
         {{ object.likes.user }}
         <hr>
@@ -45,14 +54,16 @@
         {% endif %}
       </div>
     </article>
-    <h2>Make a comment to this post!</h2>
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            {{ form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Comment</button>
-        </div>
-    </form>
+    {% if user.is_authenticated %}
+        <h2>Make a comment to this post!</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Comment</button>
+            </div>
+        </form>
+    {% endif %}
 {% endblock %}
