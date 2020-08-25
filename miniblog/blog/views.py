@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from blog.models import Post, Comments
 from django.views import generic
 from django.views.generic.edit import FormMixin
@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse
 from blog.forms import CreateComments
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 
 def LikeView(request, pk):
@@ -26,6 +27,17 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
     ordering = ['-date']
     paginate_by = 5
+
+
+class UserPostListView(generic.ListView):
+    model = Post
+    template_name = 'blog/user_post.html'
+    context_object_name = 'posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date')
 
 
 class PostDetailView(FormMixin, generic.DetailView):
