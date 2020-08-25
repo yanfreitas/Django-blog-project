@@ -25,6 +25,7 @@ class PostListView(generic.ListView):
     template_name = 'index.html'
     context_object_name = 'posts'
     ordering = ['-date']
+    paginate_by = 5
 
 
 class PostDetailView(FormMixin, generic.DetailView):
