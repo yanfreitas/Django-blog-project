@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/miniblog/users/templates/users/password_reset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/users/templates/users/password_reset_complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/users/templates/users/password_reset_confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniblog/users/templates/users/password_reset_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/blog/tests/test_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/miniblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/miniblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/tests.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -68,6 +63,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598458934836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598458934835" />
     <state x="87" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598300748645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
