@@ -62,6 +62,7 @@ class PostDetailView(FormMixin, generic.DetailView):
         form.save()
         return super(PostDetailView, self).form_valid(form)
 
+
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     liked = False

@@ -106,4 +106,3 @@ class CommentsAuthorTest(TestCase):
         comment = Comments.objects.get(id=1)
         max_length = comment._meta.get_field('description').max_length
         self.assertEquals(max_length, 300)
-
