@@ -9,18 +9,6 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 
 
-def LikeView(request, pk):
-    post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    liked = False
-    if post.likes.filter(id=request.user.id).exists():
-        post.likes.remove(request.user)
-        liked = False
-    else:
-        post.likes.add(request.user)
-        liked = True
-    return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
-
-
 class PostListView(generic.ListView):
     model = Post
     template_name = 'index.html'
@@ -73,6 +61,17 @@ class PostDetailView(FormMixin, generic.DetailView):
         form.instance.blog_post = get_object_or_404(Post, pk=self.kwargs['pk'])
         form.save()
         return super(PostDetailView, self).form_valid(form)
+
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
 
 
 class PostCreateView(LoginRequiredMixin, generic.CreateView):
