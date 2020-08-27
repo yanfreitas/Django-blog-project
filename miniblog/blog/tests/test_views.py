@@ -78,3 +78,35 @@ class UserPostListViewTest(TestCase):
     def test_view_url_exists_at_desired_location(self):
         response = self.client.get('/blog/user/user1')
         self.assertEquals(response.status_code, 200)
+
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('user-post', kwargs={'username': 'user1'}))
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('user-post', kwargs={'username': 'user1'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'blog/user_post.html')
+
+    def test_pagination_is_five(self):
+        response = self.client.get(reverse('user-post', kwargs={'username': 'user1'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('is_paginated' in response.context)
+        self.assertTrue(response.context['is_paginated'] == True)
+        self.assertTrue(len(response.context['posts']) == 5)
+
+    def test_lists_all_posts(self):
+        # Get second page and confirm it has (exactly) remaining 2 items
+        response = self.client.get(reverse('user-post', kwargs={'username': 'user1'}) + '?page=2')
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('is_paginated' in response.context)
+        self.assertTrue(response.context['is_paginated'] == True)
+        self.assertTrue(len(response.context['posts']) == 2)
+
+    def test_get_queryset(self):
+        response = self.client.get(reverse('user-post', kwargs={'username': 'user1'}))
+        self.assertEqual(response.status_code, 200)
+        for post in response.context['posts']:
+            self.assertEqual(post.author.username, 'user1')
+
+
