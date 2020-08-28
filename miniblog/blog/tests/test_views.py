@@ -144,5 +144,41 @@ class PostDetailViewTest(TestCase):
     def test_redirects_to_correct_page_if_commented(self):
         login = self.client.login(username='user1', password='user1senha')
         response = self.client.post(reverse('post-detail', kwargs={'pk': '1'}), {'description': 'test'})
+        post = Post.objects.get(id=1)
+        comments = post.comments_set.all()
         self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
+        self.assertEqual(len(comments), 1)
+
+
+class LikeViewTest(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        # create users
+        test_user = User.objects.create_user(username='user1', password='user1senha')
+        test_user.save()
+
+        # creats posts
+        posts = 2
+
+        for post_id in range(posts):
+            Post.objects.create(
+                title=f'post {post_id}',
+                author=test_user
+            )
+
+    def test_likes(self):
+        login = self.client.login(username='user1', password='user1senha')
+        post = self.client.get(reverse('post-detail', kwargs={'pk': '1'}))
+        response = self.client.post(reverse('post-detail', kwargs={'pk': '1'}), post.context['object'].likes.add(post.context['user']))
+        self.assertEqual(response.context['total_likes'], 1)
+
+    def test_likes_redirects_to_correct_template(self):
+        login = self.client.login(username='user1', password='user1senha')
+        post = self.client.get(reverse('post-detail', kwargs={'pk': '1'}))
+        response = self.client.post(reverse('post-detail', kwargs={'pk': '1'}), post.context['object'].likes.add(post.context['user']))
+        self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
+
+
+
 
