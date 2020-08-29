@@ -1,6 +1,6 @@
 from django.test import TestCase
 from blog.models import Post, Comments
-from django.contrib.auth.models import User, Permission
+from django.contrib.auth.models import User
 
 
 class PostAuthorTest(TestCase):
