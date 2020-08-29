@@ -98,3 +98,8 @@ class UserUpdateTest(TestCase):
         self.assertFalse(form.is_valid())
 
 
+class ProfileUpdateTest(TestCase):
+
+    def test_image_label(self):
+        form = ProfileUpdateForm()
+        self.assertTrue(form.fields['image'].label == 'Image')
