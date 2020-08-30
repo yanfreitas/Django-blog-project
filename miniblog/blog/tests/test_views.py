@@ -1,12 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
-from django.contrib.auth.models import User, Permission
-from django.utils import timezone
-
+from django.contrib.auth.models import User
 from blog.models import Post, Comments
-from blog.forms import CreateComments
-from blog.views import LikeView
-import pdb
 
 
 class PostListViewTest(TestCase):
@@ -145,7 +140,6 @@ class PostDetailViewTest(TestCase):
     def test_redirects_to_correct_page_if_commented(self):
         login = self.client.login(username='user1', password='user1senha')
         response = self.client.post(reverse('post-detail', kwargs={'pk': '1'}), {'description': 'test'})
-        print(type(response))
         post = Post.objects.get(id=1)
         comments = post.comments_set.all()
         self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
@@ -155,7 +149,6 @@ class PostDetailViewTest(TestCase):
 class LikeViewTest(TestCase):
 
     def setUp(self):
-
         # create users
         test_user = User.objects.create_user(username='user1', password='user1senha')
         test_user.save()
@@ -167,22 +160,19 @@ class LikeViewTest(TestCase):
             author=test_user
         )
 
-    def test_likes(self):
+    def test_like_and_deslike(self):
+        # like
         login = self.client.login(username='user1', password='user1senha')
-        p = self.client.get(reverse('post-detail', kwargs={'pk': '1'}))
-        response = self.client.post(reverse('post-detail', kwargs={'pk': '1'}), {'post_id': True})
-        p = self.client.get(reverse('post-detail', kwargs={'pk': '1'}))
-        # print(response)
-        self.assertEqual(p.context['total_likes'], 1)
+        response = self.client.post(reverse('like-post', kwargs={'pk': '1'}), {'post_id': '1'})
+        post = Post.objects.get(id=1)
         self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
+        self.assertTrue(post.total_likes() == 1)
 
-    #def test_likes_redirects_to_correct_template(self):
-     #   login = self.client.login(username='user1', password='user1senha')
-      #  post = self.client.get(reverse('post-detail', kwargs={'pk': '1'}))
-       # response = self.client.post(reverse('post-detail', kwargs={'pk': '1'}), post.context['object'].likes.add(post.context['user']))
-        #print(2response)
-        #self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
-
+        # deslike
+        response = self.client.post(reverse('like-post', kwargs={'pk': '1'}), {'post_id': '1'})
+        post = Post.objects.get(id=1)
+        self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
+        self.assertTrue(post.total_likes() == 0)
 
 class PostCreateViewTest(TestCase):
 
@@ -194,7 +184,7 @@ class PostCreateViewTest(TestCase):
     def test_redirect_if_not_logged_in(self):
         response = self.client.get(reverse('post-create'))
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response, '/login/?next=/blog/post/new/')
+        self.assertEqual(response.url, '/login/?next=/blog/post/new/')
 
     def test_redirect_if_logged_in(self):
         login = self.client.login(username='user1', password='user1senha')

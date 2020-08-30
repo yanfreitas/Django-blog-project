@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/miniblog/users/tests/test_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/users/tests/test_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/tests/test_forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/tests/test_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/tests/test_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
