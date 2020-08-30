@@ -3,14 +3,17 @@ from django.contrib.auth.models import User
 from PIL import Image
 
 
-class Profile(models.Model):
+class Profiles(models.Model):
+    """Model that represent the profile of an user"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.png', upload_to='profile_pics')
 
     def __str__(self):
+        """String for representing the Model object name"""
         return f'{self.user.username} Profile'
 
     def save(self, *args, **kwargs):
+        """Function to resize the images uploaded"""
         super().save()
 
         img = Image.open(self.image.path)
