@@ -1,6 +1,7 @@
 from django.test import TestCase
 from blog.models import Posts, Comments
 from django.contrib.auth.models import User
+from .base_tests import test_model_fields_label, test_model_fields_max_length
 
 
 class PostAuthorTest(TestCase):
@@ -19,39 +20,25 @@ class PostAuthorTest(TestCase):
         post.likes.add(test_user2)
 
     def test_title_label(self):
-        post = Posts.objects.get(id=1)
-        field_label = post._meta.get_field('title').verbose_name
-        self.assertEquals(field_label, 'title')
+        test_model_fields_label(self, Posts, 'title', 'title')
 
     def test_description_label(self):
-        post = Posts.objects.get(id=1)
-        field_label = post._meta.get_field('description').verbose_name
-        self.assertEquals(field_label, 'description')
+        test_model_fields_label(self, Posts, 'description', 'description')
 
     def test_date_label(self):
-        post = Posts.objects.get(id=1)
-        field_label = post._meta.get_field('date').verbose_name
-        self.assertEquals(field_label, 'date')
+        test_model_fields_label(self, Posts, 'date', 'date')
 
     def test_author_label(self):
-        post = Posts.objects.get(id=1)
-        field_label = post._meta.get_field('author').verbose_name
-        self.assertEquals(field_label, 'author')
+        test_model_fields_label(self, Posts, 'author', 'author')
 
     def test_likes_label(self):
-        post = Posts.objects.get(id=1)
-        field_label = post._meta.get_field('likes').verbose_name
-        self.assertEquals(field_label, 'likes')
+        test_model_fields_label(self, Posts, 'likes', 'likes')
 
     def test_title_max_length(self):
-        post = Posts.objects.get(id=1)
-        max_length = post._meta.get_field('title').max_length
-        self.assertEquals(max_length, 200)
+        test_model_fields_max_length(self, Posts, 'title', 200)
 
     def test_description_max_length(self):
-        post = Posts.objects.get(id=1)
-        max_length = post._meta.get_field('description').max_length
-        self.assertEquals(max_length, 1000)
+        test_model_fields_max_length(self, Posts, 'description', 1000)
 
     def test_total_likes(self):
         post = Posts.objects.get(id=1)
@@ -83,26 +70,16 @@ class CommentsAuthorTest(TestCase):
         Comments.objects.create(author=test_user, blog_post=post)
 
     def test_description_label(self):
-        comment = Comments.objects.get(id=1)
-        field_label = comment._meta.get_field('description').verbose_name
-        self.assertEquals(field_label, 'description')
+        test_model_fields_label(self, Comments, 'description', 'description')
 
     def test_date_time_label(self):
-        comment = Comments.objects.get(id=1)
-        field_label = comment._meta.get_field('date_time').verbose_name
-        self.assertEquals(field_label, 'date time')
+        test_model_fields_label(self, Comments, 'date_time', 'date time')
 
     def test_blog_post_label(self):
-        comment = Comments.objects.get(id=1)
-        field_label = comment._meta.get_field('blog_post').verbose_name
-        self.assertEquals(field_label, 'blog post')
+        test_model_fields_label(self, Comments, 'blog-post', 'blog post')
 
     def test_author_label(self):
-        comment = Comments.objects.get(id=1)
-        field_label = comment._meta.get_field('author').verbose_name
-        self.assertEquals(field_label, 'author')
+        test_model_fields_label(self, Comments, 'author', 'author')
 
     def test_description_max_length(self):
-        comment = Comments.objects.get(id=1)
-        max_length = comment._meta.get_field('description').max_length
-        self.assertEquals(max_length, 300)
+        test_model_fields_max_length(self, Comments, 'description', 300)
