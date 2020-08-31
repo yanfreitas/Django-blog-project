@@ -1,7 +1,6 @@
 from django.test import TestCase
 from users.models import Profiles
 from django.contrib.auth.models import User
-from blog.tests.base_tests import test_model_fields_label
 
 
 class ProfileTest(TestCase):
@@ -13,10 +12,14 @@ class ProfileTest(TestCase):
         test_user.save()
 
     def test_user_label(self):
-        test_model_fields_label(self, Profiles, 'user', 'user')
+        prof = Profiles.objects.get(id=1)
+        field_label = prof._meta.get_field('user').verbose_name
+        self.assertEquals(field_label, 'user')
 
     def test_image_label(self):
-        test_model_fields_label(self, Profiles, 'image', 'image')
+        prof = Profiles.objects.get(id=1)
+        field_label = prof._meta.get_field('image').verbose_name
+        self.assertEquals(field_label, 'image')
 
     def test_object_name(self):
         prof = Profiles.objects.get(id=1)
