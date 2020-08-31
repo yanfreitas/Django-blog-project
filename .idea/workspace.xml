@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/miniblog/blog/tests/base_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/tests/base_tests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/blog/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/tests/test_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniblog/users/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/tests/test_models.py" afterDir="false" />
     </list>
@@ -103,6 +102,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598663063164" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598896772106">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598896772106" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1598673484710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
