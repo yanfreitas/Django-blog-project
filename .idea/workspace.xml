@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e8575c-058e-4ffc-ab24-6d3f7ca0d9d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/tests/base_tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/blog/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/tests/test_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniblog/users/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/tests/test_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniblog/media/profile_pics/24899848_1356127361165731_5994790118459723337_n_oo5KPUP.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/base_generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/blog/posts_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/blog/posts_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/blog/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/miniblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/miniblog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniblog/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniblog/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

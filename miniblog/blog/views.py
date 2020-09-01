@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from blog.models import Posts, Comments
+from blog.models import Post, Comment
 from django.views import generic
 from django.views.generic.edit import FormMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 
 class PostListView(generic.ListView):
     """Generic view that lists all posts"""
-    model = Posts
+    model = Post
     template_name = 'index.html'
     context_object_name = 'posts'
     ordering = ['-date']
@@ -20,20 +20,20 @@ class PostListView(generic.ListView):
 
 class UserPostListView(generic.ListView):
     """Generic view that lists all posts of an especific author(user)"""
-    model = Posts
-    template_name = 'blog/user_posts.html'
+    model = Post
+    template_name = 'blog/user_post.html'
     context_object_name = 'posts'
     paginate_by = 5
 
     def get_queryset(self):
         """Get the posts of the user especified"""
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Posts.objects.filter(author=user).order_by('-date')
+        return Post.objects.filter(author=user).order_by('-date')
 
 
 class PostDetailView(FormMixin, generic.DetailView):
     """View that displays the details of an specific post, also allowing to comment and like the post"""
-    model = Posts
+    model = Post
     form_class = CreateComments
 
     def get_success_url(self):
@@ -43,7 +43,7 @@ class PostDetailView(FormMixin, generic.DetailView):
     def get_context_data(self, **kwargs):
         """Function that pass the context that will be used in the template"""
         context = super(PostDetailView, self).get_context_data(**kwargs)
-        actual_post = get_object_or_404(Posts, id=self.kwargs['pk'])
+        actual_post = get_object_or_404(Post, id=self.kwargs['pk'])
         liked = False
         if actual_post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -66,7 +66,7 @@ class PostDetailView(FormMixin, generic.DetailView):
     def form_valid(self, form):
         """Function that get and set the values of the form"""
         form.instance.author = self.request.user
-        form.instance.blog_post = get_object_or_404(Posts, pk=self.kwargs['pk'])
+        form.instance.blog_post = get_object_or_404(Post, pk=self.kwargs['pk'])
         form.save()
         return super(PostDetailView, self).form_valid(form)
 
@@ -74,7 +74,7 @@ class PostDetailView(FormMixin, generic.DetailView):
 def LikeView(request, pk):
     """Function view that manages the likes and dislikes of a post"""
 
-    post = get_object_or_404(Posts, id=request.POST.get('post_id'))
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
 
     liked = False
     if post.likes.filter(id=request.user.id).exists():
@@ -88,7 +88,7 @@ def LikeView(request, pk):
 
 class PostCreateView(LoginRequiredMixin, generic.CreateView):
     """View that allows the user to create a post"""
-    model = Posts
+    model = Post
     fields = ['title', 'description']
 
     def form_valid(self, form):
@@ -99,7 +99,7 @@ class PostCreateView(LoginRequiredMixin, generic.CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     """View that allows a user to update a post"""
-    model = Posts
+    model = Post
     fields = ['title', 'description']
 
     def form_valid(self, form):
@@ -117,7 +117,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     """View that allows a user delete the post"""
-    model = Posts
+    model = Post
 
     def test_func(self):
         """Function that checks if the user that is requesting the delete is the author of the post"""
@@ -133,7 +133,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView
 
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     """View that allows a user delete the comment"""
-    model = Comments
+    model = Comment
 
     def test_func(self):
         """Function that checks if the user that is requesting the delete is the author of the post or

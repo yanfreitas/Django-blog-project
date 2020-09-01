@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from blog.models import Posts, Comments
+from blog.models import Post, Comment
 
 
 class PostListViewTest(TestCase):
@@ -16,7 +16,7 @@ class PostListViewTest(TestCase):
         posts = 13
 
         for post_id in range(posts):
-            Posts.objects.create(
+            Post.objects.create(
                 title=f'post {post_id}',
                 author=test_user
             )
@@ -62,12 +62,12 @@ class UserPostListViewTest(TestCase):
 
         for post_id in range(posts):
             if post_id % 2 == 0:
-                Posts.objects.create(
+                Post.objects.create(
                     title=f'post {post_id}',
                     author=test_user,
                     description='some description'
                 )
-            Posts.objects.create(
+            Post.objects.create(
                 title=f'post {post_id}',
                 author=test_user2,
                 description='some description'
@@ -84,7 +84,7 @@ class UserPostListViewTest(TestCase):
     def test_view_uses_correct_template(self):
         response = self.client.get(reverse('user-post', kwargs={'username': 'user1'}))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'blog/user_posts.html')
+        self.assertTemplateUsed(response, 'blog/user_post.html')
 
     def test_pagination_is_five(self):
         response = self.client.get(reverse('user-post', kwargs={'username': 'user1'}))
@@ -119,7 +119,7 @@ class PostDetailViewTest(TestCase):
         posts = 2
 
         for post_id in range(posts):
-            Posts.objects.create(
+            Post.objects.create(
                 title=f'post {post_id}',
                 author=test_user
             )
@@ -135,13 +135,13 @@ class PostDetailViewTest(TestCase):
     def test_view_uses_correct_template(self):
         response = self.client.get(reverse('post-detail', kwargs={'pk': '1'}))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'blog/posts_detail.html')
+        self.assertTemplateUsed(response, 'blog/post_detail.html')
 
     def test_redirects_to_correct_page_if_commented(self):
         login = self.client.login(username='user1', password='user1senha')
         response = self.client.post(reverse('post-detail', kwargs={'pk': '1'}), {'description': 'test'})
-        post = Posts.objects.get(id=1)
-        comments = post.comments_set.all()
+        post = Post.objects.get(id=1)
+        comments = post.comment_set.all()
         self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
         self.assertEqual(len(comments), 1)
 
@@ -155,7 +155,7 @@ class LikeViewTest(TestCase):
 
         # creats posts
 
-        Posts.objects.create(
+        Post.objects.create(
             title='post 1',
             author=test_user
         )
@@ -164,13 +164,13 @@ class LikeViewTest(TestCase):
         # like
         login = self.client.login(username='user1', password='user1senha')
         response = self.client.post(reverse('like-post', kwargs={'pk': '1'}), {'post_id': '1'})
-        post = Posts.objects.get(id=1)
+        post = Post.objects.get(id=1)
         self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
         self.assertTrue(post.total_likes() == 1)
 
         # deslike
         response = self.client.post(reverse('like-post', kwargs={'pk': '1'}), {'post_id': '1'})
-        post = Posts.objects.get(id=1)
+        post = Post.objects.get(id=1)
         self.assertRedirects(response, reverse('post-detail', kwargs={'pk': '1'}))
         self.assertTrue(post.total_likes() == 0)
 
@@ -198,7 +198,7 @@ class PostCreateViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
         # Check we used correct template
-        self.assertTemplateUsed(response, 'blog/posts_form.html')
+        self.assertTemplateUsed(response, 'blog/post_form.html')
 
     def test_title_is_invalid(self):
         login = self.client.login(username='user1', password='user1senha')
@@ -217,7 +217,7 @@ class PostCreateViewTest(TestCase):
         self.assertTrue(response.url.startswith('/blog/post/'))
 
         # checking if the post was created.
-        post = Posts.objects.get(id=1)
+        post = Post.objects.get(id=1)
         self.assertTrue(post)
 
 
@@ -232,7 +232,7 @@ class PostUpdateViewTest(TestCase):
 
         # creats posts
 
-        Posts.objects.create(
+        Post.objects.create(
             title=f'post {1}',
             author=test_user
         )
@@ -258,7 +258,7 @@ class PostUpdateViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
         # Check we used correct template
-        self.assertTemplateUsed(response, 'blog/posts_form.html')
+        self.assertTemplateUsed(response, 'blog/post_form.html')
 
     def test_title_is_invalid(self):
         login = self.client.login(username='user1', password='user1senha')
@@ -277,7 +277,7 @@ class PostUpdateViewTest(TestCase):
         self.assertTrue(response.url.startswith('/blog/post/'))
 
         # checking if the post was created.
-        post = Posts.objects.get(id=1)
+        post = Post.objects.get(id=1)
         self.assertTrue(post)
 
 
@@ -292,7 +292,7 @@ class PostDeleteViewTest(TestCase):
 
         # creats post
 
-        self.post = Posts.objects.create(
+        self.post = Post.objects.create(
             title=f'post {1}',
             author=test_user
         )
@@ -318,7 +318,7 @@ class PostDeleteViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
         # Check we used correct template
-        self.assertTemplateUsed(response, 'blog/posts_confirm_delete.html')
+        self.assertTemplateUsed(response, 'blog/post_confirm_delete.html')
 
     def test_redirects_to_index_on_seccess(self):
         login = self.client.login(username='user1', password='user1senha')
@@ -338,12 +338,12 @@ class CommentDeleteViewTest(TestCase):
 
         # creats post
 
-        self.post = Posts.objects.create(
+        self.post = Post.objects.create(
             title=f'post {1}',
             author=test_user
         )
 
-        Comments.objects.create(blog_post=self.post, author=test_user, description='test comment!')
+        Comment.objects.create(blog_post=self.post, author=test_user, description='test comment!')
 
     def test_redirect_if_not_logged_in(self):
         response = self.client.get(reverse('comment-delete', kwargs={'pk': self.post.pk}))
@@ -364,7 +364,7 @@ class CommentDeleteViewTest(TestCase):
         login = self.client.login(username='user1', password='user1senha')
         response = self.client.get(reverse('comment-delete', kwargs={'pk': self.post.pk}))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'blog/comments_confirm_delete.html')
+        self.assertTemplateUsed(response, 'blog/comment_confirm_delete.html')
 
     def test_redirects_to_detail_view_on_success(self):
         login = self.client.login(username='user1', password='user1senha')

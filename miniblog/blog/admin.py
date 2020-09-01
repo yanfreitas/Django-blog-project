@@ -1,14 +1,14 @@
 from django.contrib import admin
-from blog.models import Posts, Comments
+from blog.models import Post, Comment
 
 
 class CommentsInline(admin.TabularInline):
     """Insert the comments in the post page on the admin page"""
-    model = Comments
+    model = Comment
     extra = False
 
 
-@admin.register(Posts)
+@admin.register(Post)
 class BlogpostAdmin(admin.ModelAdmin):
     """Register the posts model on the admin page"""
     list_display = ('title', 'date', 'author')
@@ -16,7 +16,7 @@ class BlogpostAdmin(admin.ModelAdmin):
     inlines = [CommentsInline]
 
 
-@admin.register(Comments)
+@admin.register(Comment)
 class CommentsAdmin(admin.ModelAdmin):
     """Register the comments model on the admin page"""
     list_display = ('author', 'blog_post', 'date_time')

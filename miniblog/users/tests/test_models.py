@@ -1,5 +1,5 @@
 from django.test import TestCase
-from users.models import Profiles
+from users.models import Profile
 from django.contrib.auth.models import User
 
 
@@ -12,21 +12,21 @@ class ProfileTest(TestCase):
         test_user.save()
 
     def test_user_label(self):
-        prof = Profiles.objects.get(id=1)
+        prof = Profile.objects.get(id=1)
         field_label = prof._meta.get_field('user').verbose_name
         self.assertEquals(field_label, 'user')
 
     def test_image_label(self):
-        prof = Profiles.objects.get(id=1)
+        prof = Profile.objects.get(id=1)
         field_label = prof._meta.get_field('image').verbose_name
         self.assertEquals(field_label, 'image')
 
     def test_object_name(self):
-        prof = Profiles.objects.get(id=1)
+        prof = Profile.objects.get(id=1)
         expected_name = f'{prof.user.username} Profile'
         self.assertEquals(expected_name, str(prof))
 
     def test_image_size(self):
-        prof = Profiles.objects.get(id=1)
+        prof = Profile.objects.get(id=1)
         expected_image_size = (300, 300)
         self.assertEquals(expected_image_size, (prof.image.height, prof.image.width))

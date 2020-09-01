@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
-class Posts(models.Model):
+class Post(models.Model):
     """Model that represents posts in the blog"""
     title = models.CharField(max_length=200, help_text='Enter a post title')
     description = models.TextField(max_length=1000, help_text='Enter a description for the post')
@@ -29,11 +29,11 @@ class Posts(models.Model):
         ordering = ['-date']
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     """Model for representing a comment on the post"""
     description = models.TextField(max_length=300)
     date_time = models.DateTimeField(default=timezone.now)
-    blog_post = models.ForeignKey(Posts, on_delete=models.CASCADE)
+    blog_post = models.ForeignKey(Post, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
