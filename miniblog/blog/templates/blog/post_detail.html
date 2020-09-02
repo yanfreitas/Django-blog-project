@@ -32,8 +32,8 @@
         </form>
         {{ object.likes.user }}
         <hr>
-        {% if object.comments_set.all %}
-          {% for comment in object.comments_set.all %}
+        {% if object.comment_set.all %}
+          {% for comment in object.comment_set.all %}
             <article class="media content-section">
               <img class="rounded-circle article-img" src="{{ comment.author.profile.image.url }}">
               <div class="media-body">

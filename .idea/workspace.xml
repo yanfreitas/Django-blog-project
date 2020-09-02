@@ -39,8 +39,12 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/miniblog/media/profile_pics" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\media\profile_pics" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\media" />

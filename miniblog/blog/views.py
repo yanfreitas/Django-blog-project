@@ -4,7 +4,7 @@ from django.views import generic
 from django.views.generic.edit import FormMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse
-from blog.forms import CreateComments
+from blog.forms import CreateComment
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 
@@ -34,7 +34,7 @@ class UserPostListView(generic.ListView):
 class PostDetailView(FormMixin, generic.DetailView):
     """View that displays the details of an specific post, also allowing to comment and like the post"""
     model = Post
-    form_class = CreateComments
+    form_class = CreateComment
 
     def get_success_url(self):
         """Function that determine the url to redirect when a form is successfully validated """
@@ -50,7 +50,7 @@ class PostDetailView(FormMixin, generic.DetailView):
 
         context['total_likes'] = actual_post.total_likes()
         context['liked'] = liked
-        context['form'] = CreateComments()
+        context['form'] = CreateComment()
 
         return context
 
