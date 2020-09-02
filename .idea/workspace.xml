@@ -46,25 +46,25 @@
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\media\profile_pics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\media" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\media\profile_pics" />
       <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\blog\static\blog\css" />
-      <recent name="C:\Users\Yan_1\Documents\GitHub\Django-blog-project\miniblog\blog\static\css" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Unittests in test_views.py">
-    <configuration name="Unittests for test_views.LikeViewTest.test_likes_redirects_to_correct_template" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for blog.tests.test_views.LikeViewTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Django-blog-project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/miniblog/blog/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/blog/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_views.LikeViewTest.test_likes_redirects_to_correct_template&quot;" />
+      <option name="_new_target" value="&quot;blog.tests.test_views.LikeViewTest&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -73,19 +73,19 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/miniblog/blog/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/blog/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/miniblog/blog/tests/test_views.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/blog/tests/test_views.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Unittests in test_views.py" />
-        <item itemvalue="Python tests.Unittests for test_views.LikeViewTest.test_likes_redirects_to_correct_template" />
+        <item itemvalue="Python tests.Unittests for blog.tests.test_views.LikeViewTest" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +160,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/miniblog/manage.py</url>
+          <url>file://$PROJECT_DIR$/manage.py</url>
           <line>2</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
