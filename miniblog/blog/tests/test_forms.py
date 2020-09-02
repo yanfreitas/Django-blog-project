@@ -1,17 +1,17 @@
 from django.test import SimpleTestCase
-from blog.forms import CreateComments
+from blog.forms import CreateComment
 
 
 class CreateCommentsTest(SimpleTestCase):
 
     def test_description_label(self):
-        form = CreateComments()
+        form = CreateComment()
         self.assertTrue(form.fields['description'].label == '')
 
     def test_form_is_valid(self):
-        form = CreateComments(data={'description': 'just a test'})
+        form = CreateComment(data={'description': 'just a test'})
         self.assertTrue(form.is_valid())
 
     def test_form_is_invalid(self):
-        form = CreateComments(data={'description': ''})
+        form = CreateComment(data={'description': ''})
         self.assertFalse(form.is_valid())
