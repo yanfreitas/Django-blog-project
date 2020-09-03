@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECRET_KEY = '18!hn*4j^*kxu!+4!4c!3&(df*n4oxt$@e2*-wr$y9ko*^6a1&'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == "True")
+DEBUG = (os.environ.get('DEBUG_VALUE') == str(True))
 
 ALLOWED_HOSTS = ['mydjangominiblog.herokuapp.com']
 
